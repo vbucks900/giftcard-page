@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Claim Your Free 7-Eleven Gift Card</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unlock Exclusive Content</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ffcf71, #2376dd);
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
     .container {
-      max-width: 500px;
-      margin: auto;
-      background: rgba(0,0,0,0.5);
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      padding: 40px;
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      backdrop-filter: blur( 8.5px );
+      -webkit-backdrop-filter: blur( 8.5px );
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
+      max-width: 400px;
     }
     h1 {
-      font-size: 28px;
-      margin-bottom: 15px;
+      font-size: 2.5em;
+      margin-bottom: 10px;
     }
     p {
-      font-size: 18px;
+      font-size: 1.2em;
+      margin-bottom: 30px;
     }
-    .cta-button {
-      display: inline-block;
-      margin-top: 20px;
+    .btn {
       padding: 15px 30px;
-      font-size: 20px;
-      background-color: #00ff88;
-      color: #000;
+      background: #00c6ff;
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+      color: white;
       border: none;
-      border-radius: 10px;
+      border-radius: 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: transform 0.2s ease;
       text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      display: inline-block;
     }
-    .cta-button:hover {
-      background-color: #00e676;
+    .btn:hover {
+      transform: scale(1.05);
     }
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin-bottom: 20px;
+    .note {
+      font-size: 0.9em;
+      margin-top: 20px;
+      color: #cccccc;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="data:image/jpeg;base64,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lWrPprPxj6M/J0snaSeKcyvU6az8Y+jPydLJ2j/FOZXqjprPxj6M/J0snaP8U5lep01n4x9Gfk6WTtH+KcyvU6az8Y+jPydLJ2j/ABTmV6nTWfjH0Z+TpZO0k8U5lep01n4x9Gfk6WTtJPFOZXqdNZ+MfRn5Olk7STxTmV6nTWfjH0Z+TpZO0k8U5lep01n4x9Gfk6WTtJPFOZXqdNZ+MfRn5Olk7STxTmV6nTWfjH0Z+TpZO0k8U5lep01n4x9Gfk6WTtH+KcyvU6az8Y+jPydLJ2j/ABTmV6nTWfjH0Z+TpZO0f4pzK9TprPxj6M/J0snaP8U5lep01n4x9Gfk6WTtH+KcyvU6az8Y+jPydLJ2kninMr1Oms/GPoz8nSydpJ4pzK9TprPxj6M/J0snaSeKcyvU6az8Y+jPydLJ2kninMr1Oms/GPo84k6WTtJPFRzK9TprPxj6TtLWkRsBcb5LdZJ5AveLkqNWy0Znwr7jpKrNrDCAgICAgICAgICAgICAgICAgICAgICAg9mzEAKcsOF4qGYgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIP/Z" alt="7-Eleven Gift Card">
-    <h1>🎁 Win a $100 7-Eleven Gift Card!</h1>
-    <p>Many people have already claimed theirs. Don’t miss out – it only takes 30 seconds!</p>
-    <a class="cta-button" href="https://smrturl.co/a/sda63ead76e/62?s1=" target="_blank">Claim Yours Now!</a>
+    <h1>🎁 Unlock Your Free Reward!</h1>
+    <p>Click the button below, complete a quick task, and claim your exclusive content.</p>
+    <a class="btn" href="https://yourlockerlink.com" target="_blank">Unlock Now</a>
+    <p class="note">*No credit card required. Instant access after task completion.</p>
   </div>
 </body>
 </html>
