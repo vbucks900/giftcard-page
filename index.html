@@ -6,26 +6,46 @@
   <title>Claim Your Free Gift</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      --text-color: white;
+      --box-bg: rgba(255, 255, 255, 0.1);
+    }
+    [data-theme="light"] {
+      --bg-color: #f4f4f4;
+      --text-color: #222;
+      --box-bg: #ffffff;
+    }
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: white;
+      background: var(--bg-color);
+      color: var(--text-color);
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .top-bar {
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
     }
     .container {
       text-align: center;
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--box-bg);
       border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-      backdrop-filter: blur( 8.5px );
-      -webkit-backdrop-filter: blur( 8.5px );
-      border: 1px solid rgba( 255, 255, 255, 0.18 );
-      max-width: 500px;
+      padding: 40px 30px;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(8.5px);
+      -webkit-backdrop-filter: blur(8.5px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      max-width: 900px;
+      width: 100%;
     }
     h1 {
       font-size: 2.3em;
@@ -33,10 +53,27 @@
     }
     p {
       font-size: 1.1em;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
-    .offer {
-      margin: 20px 0;
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .offer-box {
+      background: var(--box-bg);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+    .offer-box:hover {
+      transform: translateY(-5px);
+    }
+    .offer-box h2 {
+      font-size: 1.3em;
+      margin-bottom: 15px;
     }
     .btn {
       padding: 12px 25px;
@@ -56,37 +93,94 @@
     }
     .note {
       font-size: 0.9em;
-      margin-top: 20px;
-      color: #cccccc;
+      margin-top: 30px;
+    }
+    .toggle-btn {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .testimonial {
+      margin-top: 30px;
+      font-style: italic;
+      opacity: 0.9;
+    }
+    .countdown {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 20px 0;
     }
   </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === "light" ? "dark" : "light";
+    }
+    function startCountdown(seconds) {
+      const el = document.getElementById("countdown");
+      setInterval(() => {
+        if (seconds <= 0) return;
+        seconds--;
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        el.textContent = `Offer expires in ${mins}m ${secs}s!`;
+      }, 1000);
+    }
+    window.onload = () => startCountdown(600);
+  </script>
 </head>
 <body>
+  <div class="top-bar">
+    <button class="toggle-btn" onclick="toggleTheme()">Toggle Dark/Light</button>
+    <div id="google_translate_element"></div>
+  </div>
+
   <div class="container">
     <h1>🎁 Choose Your Free Reward!</h1>
     <p>Select one of the available offers and complete a quick task to unlock your reward.</p>
+    <div id="countdown" class="countdown"></div>
 
-    <div class="offer">
-      <h2>🧘‍♀️ Get a $500 LuluLemon Gift Card</h2>
-      <a class="btn" href="https://yourlink1.com" target="_blank">Claim Offer</a>
-    </div>
+    <div class="offers-grid">
+      <div class="offer-box">
+        <h2>🧘‍♀️ $500 LuluLemon Gift Card</h2>
+        <a class="btn" href="https://smrturl.co/a/sda63ead76e/1610?s1=" target="_blank">Claim Offer</a>
+      </div>
 
-    <div class="offer">
-      <h2>🛒 Win a $100 7-Eleven Gift Card</h2>
-      <a class="btn" href="https://yourlink2.com" target="_blank">Claim Offer</a>
-    </div>
+      <div class="offer-box">
+        <h2>🛒 $100 7-Eleven Gift Card</h2>
+        <a class="btn" href="https://smrturl.co/a/sda63ead76e/62?s1=" target="_blank">Claim Offer</a>
+      </div>
 
-    <div class="offer">
-      <h2>🎁 Get a Free Gift Box</h2>
-      <a class="btn" href="https://yourlink3.com" target="_blank">Claim Offer</a>
-    </div>
+      <div class="offer-box">
+        <h2>🎁 Free Gift Box</h2>
+        <a class="btn" href="https://smrturl.co/a/sda63ead76e/872?s1=" target="_blank">Claim Offer</a>
+      </div>
 
-    <div class="offer">
-      <h2>📺 Win a $100 Hulu Plus Gift Card</h2>
-      <a class="btn" href="https://yourlink4.com" target="_blank">Claim Offer</a>
+      <div class="offer-box">
+        <h2>📺 $100 Hulu Plus Gift Card</h2>
+        <a class="btn" href="https://smrturl.co/a/sda63ead76e/12680?s1=" target="_blank">Claim Offer</a>
+      </div>
     </div>
 
     <p class="note">*No credit card required. Instant access after task completion.</p>
+    <p class="testimonial">"I got my Hulu gift card in just 2 minutes – totally legit!" – Sarah M.</p>
   </div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
